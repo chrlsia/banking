@@ -5,6 +5,9 @@ import (
 	"net/http"
 )
 
+type Customer struct{
+	Name,City,Zipcode string
+}
 func main(){
 	http.HandleFunc("/greet", greet)
 
