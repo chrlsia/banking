@@ -1,7 +1,10 @@
 package main
 
+import (
+	"github.com/chrlsia/banking/app"
+)
 
 func main() {
-	Start()
+	app.Start()
 }
 
