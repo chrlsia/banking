@@ -9,12 +9,12 @@ import (
 func Start(){
 
 	// mux:=http.NewServeMux()
-	mux:=mux.NewRouter()
+	router:=mux.NewRouter()
 
 	// define routes
-	mux.HandleFunc("/greet", greet)
-	mux.HandleFunc("/customers", getAllCustomers)
+	router.HandleFunc("/greet", greet)
+	router.HandleFunc("/customers", getAllCustomers)
 
 	// start the server
-	log.Fatal(http.ListenAndServe(":3000", mux))
+	log.Fatal(http.ListenAndServe(":3000", router))
 }
