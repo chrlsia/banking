@@ -5,7 +5,10 @@ import (
 )
 
 func Start(){
-	http.HandleFunc("/greet", greet)
-	http.HandleFunc("/customers", getAllCustomers)
-	http.ListenAndServe(":3000", nil)
+
+	mux:=http.NewServeMux()
+
+	mux.HandleFunc("/greet", greet)
+	mux.HandleFunc("/customers", getAllCustomers)
+	http.ListenAndServe(":3000", mux)
 }
