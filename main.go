@@ -28,5 +28,6 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request ){
 		{Name:"Ashish",City: "New Delhi", Zipcode:"110075"},
 		{Name:"Rod",City: "New Delhi", Zipcode:"110075"},
 	}
+	w.Header().Add("Content-Type","application/json")
 	json.NewEncoder(w).Encode(customers)
 }
