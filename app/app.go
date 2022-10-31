@@ -1,7 +1,7 @@
 package app
 
 import (
-	"fmt"
+	_"fmt"
 	"log"
 	"net/http"
 
@@ -23,13 +23,4 @@ func Start(){
 
 	// start the server
 	log.Fatal(http.ListenAndServe(":3000", router))
-}
-
-func getCustomer(w http.ResponseWriter, r *http.Request){
-	vars:=mux.Vars(r) // creates a map
-	fmt.Fprint(w,vars["customer_id"])
-}
-
-func createCustomer(w http.ResponseWriter, r *http.Request){
-	fmt.Fprint(w, "Post request received")
 }
