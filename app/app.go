@@ -16,7 +16,7 @@ func Start(){
 	// define routes
 	router.HandleFunc("/greet", greet)
 	router.HandleFunc("/customers", getAllCustomers)
-	router.HandleFunc("/customers/{customer_id}", getCustomer)
+	router.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer)
 
 
 	// start the server
