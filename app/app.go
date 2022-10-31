@@ -14,9 +14,9 @@ func Start(){
 	router:=mux.NewRouter()
 
 	// define routes
-	router.HandleFunc("/greet", greet)
-	router.HandleFunc("/customers", getAllCustomers)
-	router.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer)
+	router.HandleFunc("/greet", greet).Methods(http.MethodGet)
+	router.HandleFunc("/customers", getAllCustomers).Methods(http.MethodGet)
+	router.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer).Methods(http.MethodGet)
 
 
 	// start the server
