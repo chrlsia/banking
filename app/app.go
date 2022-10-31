@@ -1,6 +1,7 @@
 package app
 
 import (
+	"log"
 	"net/http"
 )
 
@@ -10,5 +11,5 @@ func Start(){
 
 	mux.HandleFunc("/greet", greet)
 	mux.HandleFunc("/customers", getAllCustomers)
-	http.ListenAndServe(":3000", mux)
+	log.Fatal(http.ListenAndServe(":3000", mux))
 }
