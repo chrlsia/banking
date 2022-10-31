@@ -16,6 +16,8 @@ func Start(){
 	// define routes
 	router.HandleFunc("/greet", greet).Methods(http.MethodGet)
 	router.HandleFunc("/customers", getAllCustomers).Methods(http.MethodGet)
+	router.HandleFunc("/customers", createCustomer).Methods(http.MethodPost)
+
 	router.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer).Methods(http.MethodGet)
 
 
@@ -26,4 +28,8 @@ func Start(){
 func getCustomer(w http.ResponseWriter, r *http.Request){
 	vars:=mux.Vars(r) // creates a map
 	fmt.Fprint(w,vars["customer_id"])
+}
+
+func createCustomer(w http.ResponseWriter, r *http.Request){
+	fmt.Fprint(w, "Post request received")
 }
